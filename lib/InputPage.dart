@@ -1,3 +1,4 @@
+import 'package:bmicalculator/resuableIconButton.dart';
 import 'package:bmicalculator/resusableIcon.dart';
 import 'package:bmicalculator/reusableCard.dart';
 import 'package:flutter/material.dart';
@@ -19,6 +20,8 @@ class _InputPageState extends State<InputPage> {
   Color maleCardColor = inactiveCardColor;
   Color femaleCardColor = inactiveCardColor;
   int height = 180;
+  int weight = 60;
+  int age = 25;
 
   Gender? selectedGender;
 
@@ -26,7 +29,7 @@ class _InputPageState extends State<InputPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('BMI CALCULATOR'),
+        title: const Text('BMI CALCULATOR'),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -96,13 +99,13 @@ class _InputPageState extends State<InputPage> {
                     SliderTheme(
                       data: SliderTheme.of(context).copyWith(
                         thumbColor: Colors.amber,
-                        activeTrackColor: Color(0xffeb155),
-                        inactiveTrackColor: Color(0x308d8e98),
+                        activeTrackColor: const Color(0xffeb155),
+                        inactiveTrackColor: const Color(0x308d8e98),
                         overlayColor: Colors.amber,
                         thumbShape:
-                            RoundSliderThumbShape(enabledThumbRadius: 15),
+                            const RoundSliderThumbShape(enabledThumbRadius: 15),
                         overlayShape:
-                            RoundSliderOverlayShape(overlayRadius: 30),
+                            const RoundSliderOverlayShape(overlayRadius: 30),
                       ),
                       child: Slider(
                         value: height.toDouble(),
@@ -124,11 +127,89 @@ class _InputPageState extends State<InputPage> {
                 Expanded(
                   child: ReusableCard(
                     color: activeCardColor,
+                    childWidget: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Text(
+                          'Weight',
+                          style: labelTextStyle,
+                        ),
+                        Text(
+                          weight.toString(),
+                          style: numberTextStyle,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            ReusableIconButton(
+                              buttonIcon: Icons.add,
+                              buttonPressFunction: () {
+                                setState(() {
+                                  weight++;
+                                });
+                              },
+                            ),
+                            const SizedBox(
+                              width: 10,
+                            ),
+                            ReusableIconButton(
+                              buttonIcon: Icons.remove,
+                              buttonPressFunction: () {
+                                setState(() {
+                                  if (weight != 1) {
+                                    weight--;
+                                  }
+                                });
+                              },
+                            )
+                          ],
+                        )
+                      ],
+                    ),
                   ),
                 ),
                 Expanded(
                   child: ReusableCard(
                     color: activeCardColor,
+                    childWidget: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Text(
+                          'Age',
+                          style: labelTextStyle,
+                        ),
+                        Text(
+                          age.toString(),
+                          style: numberTextStyle,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            ReusableIconButton(
+                              buttonIcon: Icons.add,
+                              buttonPressFunction: () {
+                                setState(() {
+                                  age++;
+                                });
+                              },
+                            ),
+                            const SizedBox(
+                              width: 10,
+                            ),
+                            ReusableIconButton(
+                              buttonIcon: Icons.remove,
+                              buttonPressFunction: () {
+                                setState(() {
+                                  if (age != 1) {
+                                    age--;
+                                  }
+                                });
+                              },
+                            )
+                          ],
+                        )
+                      ],
+                    ),
                   ),
                 ),
               ],
@@ -136,10 +217,10 @@ class _InputPageState extends State<InputPage> {
           ),
           Container(
             color: bottomCardColor,
-            margin: EdgeInsets.only(top: 10),
+            margin: const EdgeInsets.only(top: 10),
             height: botomContainerHeight,
             width: double.infinity,
-            child: Center(
+            child: const Center(
               child: Text(
                 'Calculate',
                 style: TextStyle(
