@@ -1,4 +1,5 @@
 import 'package:bmicalculator/resuableIconButton.dart';
+import 'package:bmicalculator/resultsPage.dart';
 import 'package:bmicalculator/resusableIcon.dart';
 import 'package:bmicalculator/reusableCard.dart';
 import 'package:flutter/material.dart';
@@ -215,18 +216,28 @@ class _InputPageState extends State<InputPage> {
               ],
             ),
           ),
-          Container(
-            color: bottomCardColor,
-            margin: const EdgeInsets.only(top: 10),
-            height: botomContainerHeight,
-            width: double.infinity,
-            child: const Center(
-              child: Text(
-                'Calculate',
-                style: TextStyle(
-                  color: txtColor,
-                  fontSize: 25,
-                  fontWeight: FontWeight.bold,
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ResultsPage(),
+                ),
+              );
+            },
+            child: Container(
+              color: bottomCardColor,
+              margin: const EdgeInsets.only(top: 10),
+              height: botomContainerHeight,
+              width: double.infinity,
+              child: const Center(
+                child: Text(
+                  'Calculate',
+                  style: TextStyle(
+                    color: txtColor,
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
             ),
