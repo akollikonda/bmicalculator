@@ -1,8 +1,8 @@
 # bmicalculator
 
-A new Flutter project.
+![plot](images/screen1.png)
 
-## Getting Started
+![plot](images/screen2.png)
 
 This project is a starting point for a Flutter application.
 
