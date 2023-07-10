@@ -1,13 +1,13 @@
-import 'package:bmicalculator/bottomButton.dart';
+import 'package:bmicalculator/components/bottomButton.dart';
 import 'package:bmicalculator/calculateBrain.dart';
-import 'package:bmicalculator/resuableIconButton.dart';
-import 'package:bmicalculator/resultsPage.dart';
-import 'package:bmicalculator/resusableIcon.dart';
-import 'package:bmicalculator/reusableCard.dart';
+import 'package:bmicalculator/components/resuableIconButton.dart';
+import 'package:bmicalculator/screens/resultsPage.dart';
+import 'package:bmicalculator/components/resusableIcon.dart';
+import 'package:bmicalculator/components/reusableCard.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import 'constants.dart';
+import '../constants.dart';
 
 enum Gender {
   male,
