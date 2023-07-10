@@ -1,3 +1,5 @@
+import 'package:bmicalculator/bottomButton.dart';
+import 'package:bmicalculator/calculateBrain.dart';
 import 'package:bmicalculator/resuableIconButton.dart';
 import 'package:bmicalculator/resultsPage.dart';
 import 'package:bmicalculator/resusableIcon.dart';
@@ -216,32 +218,22 @@ class _InputPageState extends State<InputPage> {
               ],
             ),
           ),
-          GestureDetector(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => ResultsPage(),
-                ),
-              );
-            },
-            child: Container(
-              color: bottomCardColor,
-              margin: const EdgeInsets.only(top: 10),
-              height: botomContainerHeight,
-              width: double.infinity,
-              child: const Center(
-                child: Text(
-                  'Calculate',
-                  style: TextStyle(
-                    color: txtColor,
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold,
+          BottomButton(
+              buttonTitle: 'Calculate',
+              onTap: () {
+                CalculatorBrain calc =
+                    CalculatorBrain(height: height, weight: weight);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ResultsPage(
+                      bmiResult: calc.calculateBMI(),
+                      resultText: calc.getResult(),
+                      interpretation: calc.getInterpretation(),
+                    ),
                   ),
-                ),
-              ),
-            ),
-          )
+                );
+              }),
         ],
       ),
     );

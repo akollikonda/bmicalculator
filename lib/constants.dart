@@ -11,3 +11,21 @@ const double sizedBoxHeight = 15;
 
 const TextStyle numberTextStyle =
     TextStyle(fontSize: 50, fontWeight: FontWeight.bold);
+
+const TextStyle resultsTextStyle =
+    TextStyle(fontSize: 50, fontWeight: FontWeight.bold);
+
+const TextStyle bmiTypeStyle = TextStyle(
+    fontSize: 22, fontWeight: FontWeight.bold, color: Color(0xff24d876));
+
+const TextStyle bmiNumStyle = TextStyle(
+    fontSize: 100, fontWeight: FontWeight.bold, color: Color(0xff24d876));
+
+const TextStyle bmiTextStyle = TextStyle(
+    fontSize: 22, fontWeight: FontWeight.bold, color: Color(0xff24d876));
+
+const TextStyle bottomTextStyle = TextStyle(
+  color: txtColor,
+  fontSize: 25,
+  fontWeight: FontWeight.bold,
+);
